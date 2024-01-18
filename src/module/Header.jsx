@@ -1,5 +1,5 @@
 import { Stack, Box, Typography } from '@mui/material'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { HomePageContext } from './context'
 
 function Header() {
@@ -8,16 +8,12 @@ function Header() {
   const handleClick = (ref) => () => {
     ref.current.scrollIntoView({behavior: 'smooth'})
   }
-
-  useEffect(() => {
-    console.log('wawa', refs)
-  }, [refs])
   return (
     <Box
       ref={refs.headerRef}
       position="absolute" 
       width="100%" 
-      sx={{background: "rgba(	0, 51, 102, 0.5)"}}
+      sx={{background: "rgba(	0, 51, 102, 0.5)", zIndex: "100",}}
     >
       <Stack 
         m={2} pl={4} direction="row" spacing={4} 

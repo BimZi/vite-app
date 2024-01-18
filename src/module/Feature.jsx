@@ -1,9 +1,10 @@
 import { Box, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { HomePageContext } from './context'
+import { getImageURL } from '../util/util'
 
 function Feature() {
-  const imageURL = '/Bitmap.png'
+  const imageURL = getImageURL('Bitmap.png')
   const {refs} = useContext(HomePageContext)
 
   return (

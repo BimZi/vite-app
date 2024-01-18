@@ -3,6 +3,7 @@ import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import { useState } from 'react';
 import { useContext } from 'react';
 import { HomePageContext } from './context';
+import { getImageURL } from '../util/util';
 
 const faqList = [
   {
@@ -25,7 +26,7 @@ const faqList = [
 
 function Faq() {
   const {refs} = useContext(HomePageContext)
-  const imageURL = '/Bitmap3.png'
+  const imageURL = getImageURL('Bitmap3.png')
 
   const [open, setOpen] = useState(-1);
 

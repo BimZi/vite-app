@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material"
 import { useContext } from "react"
 import { HomePageContext } from "./context"
+import { getImageURL } from "../util/util"
 
 
 function Jumbotron() {
-  const imageURL = '/Banner.png'
+  const imageURL = getImageURL('Banner.png')
+  const imageURL2 = getImageURL('google-play-badge.png')
   const {refs} = useContext(HomePageContext)
 
   return (
@@ -32,7 +34,7 @@ function Jumbotron() {
       </Box>
 
       <Box pl={12}>
-        <img width={200} src="/google-play-badge.png" />
+        <img width={200} src={imageURL2} />
       </Box>
       </Box>
     </>

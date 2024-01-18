@@ -1,14 +1,18 @@
 import { Box, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { HomePageContext } from './context'
+import { getImageURL } from '../util/util'
 
 function Footer() {
   const {refs} = useContext(HomePageContext)
+  const imageURL = getImageURL('footer.png')
+  const imageURL2 = getImageURL('google-play-badge.png')
+  const imageURL3 = getImageURL('logo.png')
 
   return (
     <Box
       sx={{
-        backgroundImage: `url(/footer.png)`,
+        backgroundImage: `url(${imageURL})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -17,12 +21,12 @@ function Footer() {
     >
       <Box ref={refs.footerRef} textAlign="center">
         <Typography mb={12} variant="h4" fontWeight="bold" color="white">What are you waiting for? Download Now!</Typography>
-        <img width={200} src="/google-play-badge.png" />
+        <img width={200} src={imageURL2} />
       </Box>
 
       <Box sx={{display: 'flex'}} p={10} m="60px 40px 0">
         <Box mx={4} sx={{flex: "1 1 0"}} height="200px">
-          <img width="200" src="/logo.png" alt="logo"/>
+          <img width="200" src={imageURL3} alt="logo"/>
         </Box>
         <Box mx={4} sx={{flex: "1 1 0", display: 'flex', flexDirection: "column"}} height="200px">
           <Typography mb={4} color="white" variant='body' fontWeight="bold">COMPANY</Typography>
